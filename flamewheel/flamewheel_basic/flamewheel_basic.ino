@@ -13,9 +13,8 @@ int joystickX, joystickY;
 int buttonState[7];
 unsigned int led_count;
 void setup() {
-  Serial.begin(9600);
   Romeo_m.Initialise();
-  Goble.begin();
+  Goble.begin(9600);
   pinMode(LED, OUTPUT);
 }
 void loop() {
@@ -106,6 +105,7 @@ void delayLedBlink()
   {
     digitalWrite(LED, !digitalRead(LED));
     led_count = 0;
-    Serial.println("Blink!");
   }
 }
+
+
